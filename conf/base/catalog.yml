@@ -2,3 +2,187 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://docs.kedro.org/en/stable/catalog-data/introduction/#data-catalog
+
+# ===== DATOS CRUDOS =====
+consultas_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/consultas.csv
+  load_args:
+    encoding: latin-1
+    encoding_errors: ignore
+
+examenes_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/examenes.csv
+  load_args:
+    encoding: latin-1
+    encoding_errors: ignore
+
+medicamentos_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/medicamentos.csv
+  load_args:
+    encoding: latin-1
+    encoding_errors: ignore
+
+pacientes_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/pacientes.csv
+  load_args:
+    encoding: latin-1
+    encoding_errors: ignore
+
+# ===== DATOS LIMPIOS =====
+consultas_cleaned:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/consultas_cleaned.parquet
+
+examenes_cleaned:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/examenes_cleaned.parquet
+
+medicamentos_cleaned:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/medicamentos_cleaned.parquet
+
+pacientes_cleaned:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/pacientes_cleaned.parquet
+
+# ===== DATOS INTEGRADOS =====
+dataset_integrado:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/dataset_integrado.parquet
+
+# ===== REPORTES =====
+reporte_validacion:
+  type: pandas.JSONDataset
+  filepath: data/08_reporting/reporte_validacion.json
+
+# ===== DATOS EXPLORADOS =====
+consultas_explored:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/consultas_explored.parquet
+
+examenes_explored:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/examenes_explored.parquet
+
+medicamentos_explored:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/medicamentos_explored.parquet
+
+pacientes_explored:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/pacientes_explored.parquet
+
+reporte_diagnostico:
+  type: pandas.ParquetDataset
+  filepath: data/08_reporting/reporte_diagnostico.parquet
+
+# ===== DATOS INTERMEDIOS CLEANING =====
+consultas_sin_dups:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/consultas_sin_dups.parquet
+
+consultas_tipos_ok:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/consultas_tipos_ok.parquet
+
+consultas_fechas_ok:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/consultas_fechas_ok.parquet
+
+consultas_strings_ok:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/consultas_strings_ok.parquet
+
+consultas_nulos_ok:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/consultas_nulos_ok.parquet
+
+examenes_sin_dups:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/examenes_sin_dups.parquet
+
+examenes_tipos_ok:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/examenes_tipos_ok.parquet
+
+examenes_fechas_ok:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/examenes_fechas_ok.parquet
+
+examenes_nulos_ok:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/examenes_nulos_ok.parquet
+
+medicamentos_sin_dups:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/medicamentos_sin_dups.parquet
+
+medicamentos_tipos_ok:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/medicamentos_tipos_ok.parquet
+
+medicamentos_nulos_ok:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/medicamentos_nulos_ok.parquet
+
+pacientes_sin_dups:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/pacientes_sin_dups.parquet
+
+pacientes_tipos_ok:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/pacientes_tipos_ok.parquet
+
+pacientes_fechas_ok:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/pacientes_fechas_ok.parquet
+
+pacientes_strings_ok:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/pacientes_strings_ok.parquet
+
+pacientes_nulos_ok:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/pacientes_nulos_ok.parquet
+
+# ===== DATOS TRANSFORMADOS =====
+dataset_merged:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/dataset_merged.parquet
+
+dataset_features:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/dataset_features.parquet
+
+dataset_normalizado:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/dataset_normalizado.parquet
+
+dataset_codificado:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/dataset_codificado.parquet
+
+# ===== VALIDACION =====
+val_consultas:
+  type: pandas.ParquetDataset
+  filepath: data/08_reporting/val_consultas.parquet
+
+val_examenes:
+  type: pandas.ParquetDataset
+  filepath: data/08_reporting/val_examenes.parquet
+
+val_medicamentos:
+  type: pandas.ParquetDataset
+  filepath: data/08_reporting/val_medicamentos.parquet
+
+val_pacientes:
+  type: pandas.ParquetDataset
+  filepath: data/08_reporting/val_pacientes.parquet
+
+val_integrado:
+  type: pandas.ParquetDataset
+  filepath: data/08_reporting/val_integrado.parquet

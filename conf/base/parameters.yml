@@ -1,0 +1,39 @@
+# Estrategia para tratar valores nulos
+estrategia_nulos: "median"
+
+# Umbral para detección de outliers (Z-score)
+umbral_outliers: 3.0
+
+# Columnas de fecha por dataset
+columnas_fecha_consultas:
+  - fecha
+
+columnas_fecha_examenes:
+  - fecha_examen
+
+columnas_fecha_pacientes:
+  - fecha_nacimiento
+
+# Columnas de texto a normalizar
+columnas_string_consultas:
+  - especialidad
+  - diagnostico_principal
+  - diagnostico_secundario
+
+columnas_string_pacientes:
+  - nombre
+  - genero
+  - prevision
+  - comuna
+
+# Columnas numéricas a normalizar
+columnas_numericas:
+  - costo
+  - costo_unitario
+  - duracion_dias
+
+# Nombres de datasets para reportes
+consultas: "consultas"
+examenes: "examenes"
+medicamentos: "medicamentos"
+pacientes: "pacientes"  
