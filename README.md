@@ -1,101 +1,79 @@
-# evaluacion
+# Evaluación Parcial 1 - Sistema Hospitalario
+## SCY1101 Programación para la Ciencia de Datos
 
-[![Powered by Kedro](https://img.shields.io/badge/powered_by-kedro-ffc900?logo=kedro)](https://kedro.org)
+## Descripción
+Proyecto de transformación de datos para un sistema hospitalario utilizando Kedro.
+Procesa 4 datasets (pacientes, consultas, exámenes, medicamentos) aplicando
+limpieza, transformación e integración de datos.
 
-## Overview
+## Requisitos
+- Python 3.10 o superior
+- uv o pip
 
-This is your new Kedro project, which was generated using `kedro 1.3.0`.
+## Instalación paso a paso
 
-Take a look at the [Kedro documentation](https://docs.kedro.org) to get started.
-
-## Rules and guidelines
-
-In order to get the best out of the template:
-
-* Don't remove any lines from the `.gitignore` file we provide
-* Make sure your results can be reproduced by following a data engineering convention
-* Don't commit data to your repository
-* Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/`
-
-## How to install dependencies
-
-Declare any dependencies in `requirements.txt` for `pip` installation.
-
-To install them, run:
-
-```
-pip install -r requirements.txt
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/matiasCaileo/evaluacion-kedro.git
+cd evaluacion-kedro/evaluacion
 ```
 
-## How to run your Kedro pipeline
-
-You can run your Kedro project with:
-
+### 2. Crear y activar entorno virtual
+```bash
+uv venv
+.venv\Scripts\activate
 ```
+
+### 3. Instalar dependencias
+```bash
+uv pip install -r requirements.txt
+```
+
+### 4. Agregar los datasets en data/01_raw/
+
+
+### consultas.csv
+### examenes.csv
+### medicamentos.csv
+### pacientes.csv
+
+### 5. Ejecutar el pipeline
+```bash
 kedro run
 ```
 
-## How to test your Kedro project
-
-Have a look at the file `tests/test_run.py` for instructions on how to write your tests. You can run your tests as follows:
-
-```
-pytest
-```
-
-You can configure the coverage threshold in your project's `pyproject.toml` file under the `[tool.coverage.report]` section.
-
-
-## Project dependencies
-
-To see and update the dependency requirements for your project use `requirements.txt`. You can install the project requirements with `pip install -r requirements.txt`.
-
-[Further information about project dependencies](https://docs.kedro.org/en/stable/kedro_project_setup/dependencies.html#project-specific-dependencies)
-
-## How to work with Kedro and notebooks
-
-> Note: Using `kedro jupyter` or `kedro ipython` to run your notebook provides these variables in scope: `context`, 'session', `catalog`, and `pipelines`.
->
-> Jupyter, JupyterLab, and IPython are already included in the project requirements by default, so once you have run `pip install -r requirements.txt` you will not need to take any extra steps before you use them.
-
-### Jupyter
-To use Jupyter notebooks in your Kedro project, you need to install Jupyter:
-
-```
-pip install jupyter
+### 6. Pipelines disponibles
+```bash
+kedro run --pipeline=ingestion
+kedro run --pipeline=cleaning
+kedro run --pipeline=transform
+kedro run --pipeline=validation
 ```
 
-After installing Jupyter, you can start a local notebook server:
-
-```
-kedro jupyter notebook
-```
-
-### JupyterLab
-To use JupyterLab, you need to install it:
-
-```
-pip install jupyterlab
+### 7. Visualizar pipeline
+```bash
+kedro viz run
 ```
 
-You can also start JupyterLab:
-
-```
-kedro jupyter lab
-```
-
-### IPython
-And if you want to run an IPython session:
-
-```
-kedro ipython
+### 8. Notebook exploratorio
+```bash
+jupyter notebook
 ```
 
-### How to ignore notebook output cells in `git`
-To automatically strip out all output cell contents before committing to `git`, you can use tools like [`nbstripout`](https://github.com/kynan/nbstripout). For example, you can add a hook in `.git/config` with `nbstripout --install`. This will run `nbstripout` before anything is committed to `git`.
+## Resultados
+| Dataset | Filas originales | Filas finales |
+|---|---|---|
+| consultas | 824 | 794 |
+| examenes | 618 | 596 |
+| medicamentos | 515 | 500 |
+| pacientes | 412 | 400 |
 
-> *Note:* Your output cells will be retained locally.
+Dataset final integrado: 349 pacientes con 0 nulos
 
-## Package your Kedro project
-
-[Further information about building project documentation and packaging your project](https://docs.kedro.org/en/stable/deploy/package_a_project/#package-an-entire-kedro-project)
+## Tecnologías
+- Kedro 1.3.0
+- Pandas
+- Scikit-learn
+- Matplotlib / Seaborn
+- PyArrow / Parquet
+- uv
