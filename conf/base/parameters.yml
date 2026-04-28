@@ -1,4 +1,4 @@
-# Estrategia para tratar valores nulos
+                                                                                # Estrategia para tratar valores nulos
 estrategia_nulos: "median"
 
 # Umbral para detección de outliers (Z-score)
