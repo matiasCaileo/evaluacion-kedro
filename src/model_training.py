@@ -13,6 +13,10 @@ from sklearn.cluster import KMeans, DBSCAN
 from sklearn.decomposition import PCA
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
+from sklearn.naive_bayes import GaussianNB
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.svm import SVR
+from sklearn.preprocessing import PolynomialFeatures
 
 
 def entrenar_modelos_clasificacion(X_train, y_train: int = 42) -> dict:
@@ -50,6 +54,10 @@ def entrenar_modelos_clasificacion(X_train, y_train: int = 42) -> dict:
         "SVM": Pipeline([
             ("scaler", StandardScaler()),
             ("model", SVC(random_state=42, probability=True))
+        ]),
+        "Naive Bayes": Pipeline([
+            ("scaler", StandardScaler()),
+            ("model", GaussianNB())
         ]),
     }
 
@@ -89,6 +97,14 @@ def entrenar_modelos_regresion(X_train, y_train) -> dict:
         "Random Forest Regressor": Pipeline([
             ("scaler", StandardScaler()),
             ("model", RandomForestRegressor(random_state=42, n_estimators=100))
+        ]),
+        "KNN Regressor": Pipeline([
+            ("scaler", StandardScaler()),
+            ("model", KNeighborsRegressor(n_neighbors=5))
+       ]),
+       "SVR": Pipeline([
+            ("scaler", StandardScaler()),
+            ("model", SVR(kernel="rbf"))
         ]),
     }
 
