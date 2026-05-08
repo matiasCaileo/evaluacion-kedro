@@ -1,0 +1,8 @@
+modelo,cv_media,cv_std
+Gradient Boosting,0.5898,0.039
+Random Forest,0.5879,0.0182
+KNN,0.5671,0.0206
+SVM,0.5646,0.0103
+Decision Tree,0.5597,0.021
+Logistic Regression,0.5417,0.0403
+Naive Bayes,0.5253,0.0315

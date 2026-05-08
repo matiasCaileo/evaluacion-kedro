@@ -1,0 +1,7 @@
+modelo,cv_media,cv_std
+SVR,-0.0055,0.0089
+Linear Regression,-0.015,0.0136
+Ridge Regression,-0.015,0.0136
+Random Forest Regressor,-0.4938,0.7675
+KNN Regressor,-0.5568,0.7816
+Decision Tree Regressor,-0.7082,0.8276
