@@ -1,0 +1,3 @@
+algoritmo,n_clusters,silhouette,pca_varianza_total
+KMeans,3,0.305841948433909,60.571318431288724
+DBSCAN,7,0.10754321341545191,60.571318431288724
