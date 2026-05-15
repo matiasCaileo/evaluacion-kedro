@@ -1,6 +1,9 @@
 # Evaluacion Parcial 1 y 2 - Sistema Hospitalario
 ## SCY1101 - Programacion para la Ciencia de Datos
 
+## Enlace del dataset
+https://www.kaggle.com/datasets/kanakbaghel/hospital-management-dataset
+
 ## Descripcion
 Proyecto completo de ciencia de datos sobre un sistema hospitalario.
 Incluye pipelines de datos con Kedro y modelos de machine learning.
