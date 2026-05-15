@@ -1,0 +1,8 @@
+modelo,f1_train,f1_test,diferencia,diagnostico
+Logistic Regression,0.5513,0.5569,-0.0056,Underfitting
+Decision Tree,0.6431,0.6031,0.04,Bien ajustado
+Random Forest,0.9412,0.6271,0.3142,Overfitting
+Gradient Boosting,0.7685,0.6225,0.146,Bien ajustado
+KNN,0.7137,0.5693,0.1444,Bien ajustado
+SVM,0.6133,0.5973,0.0159,Bien ajustado
+Naive Bayes,0.5272,0.5837,-0.0565,Underfitting
