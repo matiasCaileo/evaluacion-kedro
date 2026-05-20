@@ -20,31 +20,43 @@ cd evaluacion-kedro/evaluacion
 
 ### PASO 2 - Crear y activar entorno virtual
 uv venv
+
 .venv\Scripts\activate
 
 ### PASO 3 - Instalar dependencias
 uv pip install -r requirements.txt
+
 uv pip install scikit-learn imbalanced-learn joblib
 
 ### PASO 4 - Agregar los datasets originales
 Copiar los 4 archivos CSV en la carpeta data/01_raw/:
+
 data/01_raw/consultas.csv
+
 data/01_raw/examenes.csv
+
 data/01_raw/medicamentos.csv
+
 data/01_raw/pacientes.csv
 
 ### PASO 5 - Ejecutar pipeline Kedro (OBLIGATORIO antes de los notebooks)
 Este paso genera los datos limpios que usan los notebooks.
 Sin este paso los notebooks fallaran.
+
 kedro run
 
 ### PASO 6 - Abrir y ejecutar los notebooks en orden
 jupyter notebook
 Ejecutar en este orden usando Kernel - Restart and Run All:
+
 1. notebooks/01_exploratory_analysis.ipynb
+
 2. notebooks/02_supervised_modeling.ipynb
+
 3. notebooks/03_model_evaluation.ipynb
+
 4. notebooks/04_hyperparameter_optimization.ipynb
+
 5. notebooks/05_final_analysis.ipynb
 
 ## Evaluacion Parcial 1 - Pipelines Kedro
